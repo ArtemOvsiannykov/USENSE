@@ -1,0 +1,59 @@
+form {
+    display: block;
+    margin: 0 auto;
+    width: 350px;
+}
+input {
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.strength-sections {
+    display: flex;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.strength-item {
+    width: 53px;
+    height: 15px;
+    border: 1px solid #ccc;
+    background-color: gray;
+}
+
+.password-strength {
+    height: 20px;
+    p {
+        display: none;
+    }
+    .visible {
+        display: block;
+    }
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.gray {
+    background-color: gray;
+}
+
+.green {
+    background-color: green;
+}

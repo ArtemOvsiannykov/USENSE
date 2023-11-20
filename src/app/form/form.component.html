@@ -1,0 +1,34 @@
+<div class="wrap">
+  <form [formGroup]="passwordForm">
+    <input
+      type="password"
+      formControlName="password"
+      placeholder="Enter your password"
+    />
+    <div class="password-strength">
+      <p [ngClass]="{'visible': passwordForm.dirty && !isSufficientLength}">
+        The password must contain at least 8 characters (not including spaces)
+      </p>
+
+      <p [ngClass]="{'visible': isPasswordEasy }">
+        The password is easy
+      </p>
+      <p [ngClass]="{'visible': isPasswordMedium }">The password is medium</p>
+      <p [ngClass]="{'visible': isPasswordStrong }">The password is strong</p>
+    </div>
+    <div class="strength-sections">
+      <div
+        class="strength-item easy"
+        [ngClass]="{ 'red': isFieldRed,'gray': isFieldEmpty,'yellow' : isPasswordMedium,'green' : isPasswordStrong }"
+      ></div>
+      <div
+        class="strength-item medium"
+        [ngClass]="{ 'red': isFieldRed,'gray': isPasswordEasy || isFieldEmpty , 'yellow' : isPasswordMedium,'green' : isPasswordStrong  }"
+      ></div>
+      <div
+        class="strength-item strong"
+        [ngClass]="{ 'red': isFieldRed,'gray': isPasswordEasy || isPasswordMedium || isFieldEmpty,'green' : isPasswordStrong }"
+      ></div>
+    </div>
+  </form>
+</div>
